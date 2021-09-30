@@ -10,13 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TesteWeb {
-
     ChromeDriver driver;
 
     @Before
     public void inicializaTeste(){
         WebDriverManager.chromedriver().setup();
-
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -28,14 +26,11 @@ public class TesteWeb {
     @Test
     public void primeiroTeste(){
 
-
         String xpathTitulo = "//section[2]//h4";
         WebElement txtTitulo = driver.findElement(By.xpath(xpathTitulo));
         String titulo = txtTitulo.getText();
 
-
         Assert.assertEquals("Porque Tempo É Conhecimento", titulo);
-
 
     }
 
@@ -44,4 +39,4 @@ public class TesteWeb {
         driver.quit();
     }
 
-}
+  }
